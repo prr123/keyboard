@@ -86,7 +86,7 @@ func GetKey()(keyRec KeyEv) {
 		}
 
 		res = int(b[0])
-//	fmt.Printf("state %d key: %d nchars: %d\r\n", state, res, nchars)
+	fmt.Printf("state %d key: %d nchars: %d\r\n", state, res, nchars)
 
 		switch state {
 		case 0:
@@ -139,11 +139,19 @@ func GetKey()(keyRec KeyEv) {
 			case 49:
 				state = 5
 			case 50:
-				state = 6
+
+				if nchars == 2 {state = 6; break;}
+				if nchars == 1 {state = 9; break;}
+				keyRec.typ = -1
+				keyRec.key = -1
+				keyRec.Err = fmt.Errorf("tiocinq: %v", err)
+				return keyRec
 			case 51:
 				state = 9
+			case 53:
+				state = 9
 			case 54:
-				state = 10
+				state = 9
 			default:
 				keyRec.typ = 3
 				keyRec.key = key
