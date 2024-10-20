@@ -100,7 +100,7 @@ func GetKey()(keyRec KeyEv) {
 			if nchars > 0 {
 				state = 1
 			} else {
-				fmt.Printf("exiting\r\n")
+//				fmt.Printf("exiting\r\n")
 				keyRec.typ = 0
 				keyRec.key = key
 				keyRec.Err = nil
