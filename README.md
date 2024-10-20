@@ -12,6 +12,16 @@ This program uses a state machine to sort out valid escape sequences and returns
  - type
  - key
 
+key types:
+ - Type 0: Runes  
+ - Type 1: Alt + Rune  
+ - Type 2: F1 - F4  
+ - Type 3: cursors  
+ - Type 7: F5 - F8  
+ - Type 8: F9 - F12 (F11 changes screen)  
+ - Type 9: insert, delete, page-up, page-down  
+
+Note Cntl + key produces runes CNTL + c == 3 for example.  
 
 ## next steps
 
