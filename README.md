@@ -42,3 +42,7 @@ I tested the key strokes for:
  - cursor keys
  - f1 through f12 keys
  - insert, delete, home, end, page-up and page-down keys
+
+## kbLib
+
+library for keyboard function  
